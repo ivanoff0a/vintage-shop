@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/react-shop/static/css/main.93f09c2e.chunk.css",
+    "main.js": "/react-shop/static/js/main.e4c8910b.chunk.js",
+    "main.js.map": "/react-shop/static/js/main.e4c8910b.chunk.js.map",
+    "runtime~main.js": "/react-shop/static/js/runtime~main.0bd8b961.js",
+    "runtime~main.js.map": "/react-shop/static/js/runtime~main.0bd8b961.js.map",
+    "static/js/2.e88262f5.chunk.js": "/react-shop/static/js/2.e88262f5.chunk.js",
+    "static/js/2.e88262f5.chunk.js.map": "/react-shop/static/js/2.e88262f5.chunk.js.map",
+    "index.html": "/react-shop/index.html",
+    "precache-manifest.da428c4d6de7cdb37a2d74eb46283357.js": "/react-shop/precache-manifest.da428c4d6de7cdb37a2d74eb46283357.js",
+    "service-worker.js": "/react-shop/service-worker.js",
+    "static/css/main.93f09c2e.chunk.css.map": "/react-shop/static/css/main.93f09c2e.chunk.css.map",
+    "static/media/main.scss": "/react-shop/static/media/OpenSans-Regular.5a798cda.ttf",
+    "static/media/product1.jpg": "/react-shop/static/media/product1.cdc3f924.jpg",
+    "static/media/product2.jpg": "/react-shop/static/media/product2.8133ec82.jpg",
+    "static/media/product3.jpg": "/react-shop/static/media/product3.a02766f9.jpg",
+    "static/media/product4.jpg": "/react-shop/static/media/product4.918b8e64.jpg"
+  }
+}
