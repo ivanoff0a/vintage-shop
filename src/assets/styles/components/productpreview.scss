@@ -1,0 +1,73 @@
+.product {
+  position: relative;
+  height: 400px;
+  width: 300px;
+  border: 1px solid $black;
+  margin-right: 50px;
+  transition: .3s ease-out;
+
+  p {
+    color: black;
+  }
+  &__name,
+  &__price {
+    font-family: Courier New, sans-serif;
+  }
+
+  &__name {
+    padding-top: 5px;
+  }
+
+  &__price {
+    padding-top: 20px;
+  }
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    height: 95px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__add {
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    height: 50px;
+    width: 50px;
+    border: 1px solid $black;
+    border-radius: 50px;
+    background-color: $white;
+    z-index: 10;
+    cursor: pointer;
+    transition: .3s ease-out;
+    &:hover {
+      transform: translateY(-2px);
+    }
+    img {
+      padding-top: 11px;
+      padding-left: 11px;
+      height: 27px;
+    }
+  }
+
+  &__img {
+    height: 300px;
+    width: 300px;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.product:active {
+  transform: scale(1.03);
+}

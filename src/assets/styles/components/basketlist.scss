@@ -1,0 +1,82 @@
+.basket {
+  width: 700px;
+  flex-direction: column;
+  &__header {
+    display: flex;
+    justify-content: center;
+    p {
+      font-family: Courier New, sans-serif;
+      font-size: 20px;
+    }
+  }
+
+  &__body {
+    padding-top: 20px;
+  }
+
+  &__footer {
+    margin-top: 20px;
+    border-top: 1px solid $black;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  &__empty {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    p {
+      font-family: Courier New, sans-serif;
+      font-size: 20px;
+    }
+  }
+
+  &__buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 185px;
+    background-color: $black;
+    cursor: pointer;
+    transition: .3s ease-out;
+    &:active {
+      transform: scale(1.02);
+    }
+
+    p {
+      font-family: Courier New, sans-serif;
+      font-size: 18px;
+      color: $white;
+    }
+  }
+
+  &-sum  {
+    padding-right: 35px;
+  }
+
+  &__info-item {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+    p {
+      font-family: Courier New, sans-serif;
+      font-size: 18px;
+    }
+  }
+
+  &__amount{
+    margin-left: 10px;
+  }
+
+  &__container {
+    height: calc(100vh - 71px);
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+}
+

@@ -1,0 +1,38 @@
+.basket {
+  &__info {
+    padding: 10px;
+    p {
+      font-family: Courier New, sans-serif;
+    }
+  }
+
+  &__price {
+    padding-top: 30px;
+  }
+
+  &__delete {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    img {
+      cursor: pointer;
+      height: 27px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid $black;
+    height: 150px;
+    margin-bottom: 20px;
+  }
+
+  &__img {
+    img {
+      height: 150px;
+      width: 150px;
+    }
+  }
+}

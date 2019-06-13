@@ -1,26 +1,118 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { Route, browserHistory } from "react-router-dom";
+import Routes from "./constants/Routes.js";
+import Header from "./components/Header/Header";
+import ProductsList from "./components/Products/ProductsList";
+import product1__pic from "./assets/img/product1.jpg";
+import product2__pic from "./assets/img/product2.jpg";
+import product3__pic from "./assets/img/product3.jpg";
+import BasketList from "./components/Basket/BasketList";
+import ProductAbout from "./components/Products/ProductAbout";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      productsCount: 0,
+      productsMoney: 0,
+      choosenProducts: [],
+      currentProduct: {},
+      products: [
+        {
+          brand: "Custom & Bogema",
+          name: "Тоут 'Underdog'",
+          short_name: 'tote-underdog',
+          size: 'Один Размер',
+          type: "Тоут",
+          price: 2990,
+          desc: "Сделан Глебом Костиным и мной в Апреле, 2019 'Мастерская'",
+          pic: product1__pic
+        },
+        {
+          brand: "Богема",
+          name: "Шарф «ЛЕНИНГРАД»",
+          short_name: 'scarf-leningrad',
+          size: 'Один Размер',
+          type: "Шарф",
+          price: 3990,
+          desc: "Куплен в Феврале, 2019. 9/10, один размер",
+          pic: product2__pic
+        },
+        {
+          brand: "Custom",
+          name: "Тоут 'Mixed Cultures'",
+          short_name: 'tote-mixedcultures',
+          size: 'Один Размер',
+          type: "Тоут",
+          price: 1990,
+          desc: "Сделан мной в Июне, 2019. 1/1",
+          pic: product3__pic
+        }
+      ]
+    };
+  }
+
+  setCurrentProduct = product => {
+    this.setState({currentProduct: product});
+  };
+
+  addProductToBasket = product => {
+    this.setState({
+      choosenProducts: [...this.state.choosenProducts, product]
+    });
+    this.state.productsCount += 1;
+    this.state.productsMoney += product.price;
+  };
+
+  removeProductFromBasket = product => {
+    let newChoosenProducts = this.state.choosenProducts;
+    newChoosenProducts.splice(product, 1);
+    this.setState({ choosenProducts: newChoosenProducts });
+    this.state.productsCount -= 1;
+    this.state.productsMoney -= product.price;
+  };
+
+  render() {
+    return (
+      <>
+        <Header />
+        <Route
+          exact
+          path={Routes.SHOP}
+          render={props => (
+            <ProductsList
+              products={this.state.products}
+              productsCount={this.state.productsCount}
+              addProductToBasket={this.addProductToBasket}
+              setCurrentProduct={this.setCurrentProduct}
+            />
+          )}
+        />
+        <Route
+          path={Routes.PRODUCT}
+          render={props => (
+            <ProductAbout
+              {...props}
+              addProductToBasket={this.addProductToBasket}
+              productsCount={this.state.productsCount}
+              currentProduct={this.state.currentProduct}
+            />
+          )}
+        />
+        <Route
+          path={Routes.BASKET}
+          render={props => (
+            <BasketList
+              removeProductFromBasket={this.removeProductFromBasket}
+              productsMoney={this.state.productsMoney}
+              productsCount={this.state.productsCount}
+              choosenProducts={this.state.choosenProducts}
+            />
+          )}
+        />
+      </>
+    );
+  }
 }
 
 export default App;

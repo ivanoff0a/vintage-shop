@@ -1,0 +1,36 @@
+.products {
+  display: flex;
+  flex-direction: row;
+  padding: 50px;
+  &__count {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background-color: $black;
+    height: 50px;
+    width: 200px;
+    transition: .3s ease-out;
+    img {
+      height: 27px;
+      padding-top: 10px;
+      padding-left: 10px;
+    }
+  }
+}
+
+.name {
+  padding-top: 17px;
+  padding-left: 15px;
+  font-family: "Courier New", sans-serif;
+  color: $white;
+}
+
+.sum {
+  padding-top: 18px;
+  padding-left: 10px;
+  font-family: "Courier New", sans-serif;
+  color: $white;
+}
+
