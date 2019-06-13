@@ -14,9 +14,9 @@ class ProductAbout extends Component {
   }
 
   render() {
-    this.props.match.params.short_name = this.props.currentProduct.short_name;
-    const short_name = this.props.match.params.short_name;
-    console.log(short_name);
+    // this.props.match.params.short_name = this.props.currentProduct.short_name;
+    // const short_name = this.props.match.params.short_name;
+    // console.log(short_name);
     if(this.props.productsCount === 0) {
       return (
         <div className="about__container">

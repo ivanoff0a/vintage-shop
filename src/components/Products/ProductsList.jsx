@@ -8,14 +8,13 @@ class ProductsList extends Component {
   render() {
     let products = this.props.products.map((product, i) => {
       return (
-        <Link to={product.short_name} key={i}>
           <ProductPreview
             data={product}
             index={i}
+            key={i}
             addProductToBasket={this.props.addProductToBasket}
             setCurrentProduct={this.props.setCurrentProduct}
           />
-        </Link>
       );
     });
 

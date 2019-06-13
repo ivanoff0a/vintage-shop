@@ -6,6 +6,7 @@ import ProductsList from "./components/Products/ProductsList";
 import product1__pic from "./assets/img/product1.jpg";
 import product2__pic from "./assets/img/product2.jpg";
 import product3__pic from "./assets/img/product3.jpg";
+import product4__pic from "./assets/img/product4.jpg";
 import BasketList from "./components/Basket/BasketList";
 import ProductAbout from "./components/Products/ProductAbout";
 
@@ -47,6 +48,16 @@ class App extends Component {
           price: 1990,
           desc: "Сделан мной в Июне, 2019. 1/1",
           pic: product3__pic
+        },
+        {
+          brand: "Custom & Bogema",
+          name: "Футболка 'Underdog'",
+          short_name: 't-shirt-underdog',
+          size: 'M',
+          type: "Футболка",
+          price: 3990,
+          desc: "Сделана Глебом Костиным и мной в Апреле, 2019 'Мастерская'",
+          pic: product4__pic
         }
       ]
     };

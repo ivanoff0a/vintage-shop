@@ -33,9 +33,10 @@ class ProductPreview extends Component {
   render() {
     // let descClasses = 'product__desc' + this.state.blacked;
     // let textClasses = 'product__name' + this.state.whiten;
+    const productUrl = Routes.PRODUCT + this.props.data.short_name;
     return (
         <div className='product'>
-          <Link to={Routes.PRODUCT} className='product__container'>
+          <Link to={productUrl} className='product__container'>
             <div className='product__img' onClick={this.onPreviewClick}>
               <img alt='Предмет' src={this.props.data.pic} />
             </div>
