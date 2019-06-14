@@ -13,7 +13,7 @@ class ProductsList extends Component {
             index={i}
             key={i}
             addProductToBasket={this.props.addProductToBasket}
-            setCurrentProduct={this.props.setCurrentProduct}
+            // setCurrentProduct={this.props.setCurrentProduct}
           />
       );
     });

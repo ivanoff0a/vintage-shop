@@ -34,21 +34,23 @@ class BasketList extends Component {
             <div className="basket__header">
               <p>Корзина</p>
             </div>
-            <div className="basket__body">{purchases}</div>
-            <div className="basket__footer">
-              <div className="basket__info-item basket-sum">
-                <p>Количество:</p>
-                <p className="basket__amount">{this.props.productsCount}</p>
-              </div>
-              <div className="basket__info-item">
-                <p>Итого:</p>
-                <p className="basket__amount">
-                  {this.props.productsMoney} руб.
-                </p>
-              </div>
-              <div className="basket__buy">
-                <p>Купить</p>
-              </div>
+            <div className="basket__body">
+              {purchases}
+            </div>
+          </div>
+          <div className="basket__footer">
+            <div className="basket__info-item basket-sum">
+              <p>Количество:</p>
+              <p className="basket__amount">{this.props.productsCount}</p>
+            </div>
+            <div className="basket__info-item basket-end">
+              <p>Итого:</p>
+              <p className="basket__amount">
+                {this.props.productsMoney} руб.
+              </p>
+            </div>
+            <div className="basket__buy">
+              <p>Купить</p>
             </div>
           </div>
         </div>

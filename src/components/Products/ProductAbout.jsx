@@ -5,6 +5,10 @@ import basket__icon_white from "../../assets/img/bucket-icon-white.png";
 import {Link} from "react-router-dom";
 
 class ProductAbout extends Component {
+  onAddClick = () => {
+    this.props.addProductToBasket(this.props.currentProduct);
+  }
+
   onQuitClick = () => {
     this.props.history.push(Routes.SHOP);
   }
@@ -12,7 +16,6 @@ class ProductAbout extends Component {
   render() {
     const itemShortKey = this.props.match.params.short_name;
     const currentProduct = this.props.products.filter(product => product.short_name === itemShortKey)[0];
-    console.log(currentProduct);
 
     if(this.props.productsCount === 0) {
       return (
@@ -34,10 +37,11 @@ class ProductAbout extends Component {
                   <p>Купить</p>
                 </div>
               </div>
+              <div className='about__quit' onClick={this.onQuitClick}>
+                <img alt='Назад' src={back__icon}/>
+              </div>
             </div>
-            <div className='about__quit' onClick={this.onQuitClick}>
-              <img alt='Назад' src={back__icon}/>
-            </div>
+
           </div>
         </div>
       );

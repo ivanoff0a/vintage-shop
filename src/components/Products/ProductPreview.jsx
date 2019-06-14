@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import basket__icon from './../../assets/img/bucket-icon.png'
 import { Link } from "react-router-dom";
-import Routes from "../../constants/Routes";
 
 class ProductPreview extends Component {
   constructor() {
@@ -17,9 +16,9 @@ class ProductPreview extends Component {
     // this.toggleClasses();
   };
 
-  onPreviewClick = () => {
-    this.props.setCurrentProduct(this.props.data)
-  }
+  // onPreviewClick = () => {
+  //   this.props.setCurrentProduct(this.props.data)
+  // }
 
   // toggleClasses = () => {
   //   var cssBlacked =

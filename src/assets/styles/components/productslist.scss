@@ -1,17 +1,22 @@
 .products {
   display: flex;
   flex-direction: row;
-  padding: 50px;
+  flex-wrap: wrap;
+  padding-top: 120px;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-bottom: 50px;
   &__count {
+    position: fixed;
     display: flex;
     flex-direction: row;
-    position: absolute;
     right: 20px;
     bottom: 20px;
     background-color: $black;
     height: 50px;
     width: 200px;
     transition: .3s ease-out;
+    z-index: 11;
     img {
       height: 27px;
       padding-top: 10px;

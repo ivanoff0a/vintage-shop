@@ -1,6 +1,71 @@
+@media screen and (max-width: 1024px) {
+  .basket__container {
+    align-items: center;
+    flex-direction: column;
+  }
+  .basket {
+    width: 90%;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .basket__info-item {
+    p {
+      font-size: 15px;
+    }
+  }
+  .basket__buy {
+    height: 40px;
+    width: 165px;
+    p {
+      font-size: 15px;
+    }
+  }
+
+  .basket__info-item {
+    margin-bottom: 10px;
+  }
+
+}
+
+@media screen and (min-width: 1023px) {
+  .basket__container {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .basket__footer {
+    padding-top: 142px;
+    padding-left: 40px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .basket {
+    width: 700px;
+  }
+
+  .basket__info-item {
+    p {
+      font-size: 18px;
+    }
+  }
+  .basket__buy {
+    height: 50px;
+    width: 185px;
+    p {
+      font-size: 18px;
+    }
+  }
+
+  .basket__info-item {
+    margin-bottom: 15px;
+  }
+
+}
+
 .basket {
-  width: 700px;
-  flex-direction: column;
+  flex-direction: row;
+  padding-top: 100px;
   &__header {
     display: flex;
     justify-content: center;
@@ -15,13 +80,10 @@
   }
 
   &__footer {
-    margin-top: 20px;
-    border-top: 1px solid $black;
-    height: 150px;
+    height: 152px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
+    margin-bottom: 100px;
   }
 
   &__empty {
@@ -38,8 +100,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
-    width: 185px;
     background-color: $black;
     cursor: pointer;
     transition: .3s ease-out;
@@ -49,22 +109,15 @@
 
     p {
       font-family: Courier New, sans-serif;
-      font-size: 18px;
       color: $white;
     }
-  }
-
-  &-sum  {
-    padding-right: 35px;
   }
 
   &__info-item {
     display: flex;
     flex-direction: row;
-    margin-bottom: 15px;
     p {
       font-family: Courier New, sans-serif;
-      font-size: 18px;
     }
   }
 
@@ -75,8 +128,6 @@
   &__container {
     height: calc(100vh - 71px);
     display: flex;
-    justify-content: center;
-    margin-top: 30px;
   }
 }
 

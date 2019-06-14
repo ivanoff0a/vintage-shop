@@ -4,7 +4,7 @@ import delete__icon from './../../assets/img/delete-icon.png'
 class BasketItem extends Component {
 
   onRemoveClick = () => {
-    this.props.removeProductFromBasket(this.props.data);
+    this.props.removeProductFromBasket(this.props.data, this.props.index);
   };
 
   render() {

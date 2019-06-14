@@ -17,7 +17,6 @@ class App extends Component {
       productsCount: 0,
       productsMoney: 0,
       choosenProducts: [],
-      currentProduct: {},
       products: [
         {
           brand: "Custom & Bogema",
@@ -63,10 +62,6 @@ class App extends Component {
     };
   }
 
-  setCurrentProduct = product => {
-    this.setState({currentProduct: product});
-  };
-
   addProductToBasket = product => {
     this.setState({
       choosenProducts: [...this.state.choosenProducts, product]
@@ -75,9 +70,9 @@ class App extends Component {
     this.state.productsMoney += product.price;
   };
 
-  removeProductFromBasket = product => {
+  removeProductFromBasket = (product, i) => {
     let newChoosenProducts = this.state.choosenProducts;
-    newChoosenProducts.splice(product, 1);
+    newChoosenProducts.splice(i, 1);
     this.setState({ choosenProducts: newChoosenProducts });
     this.state.productsCount -= 1;
     this.state.productsMoney -= product.price;
@@ -95,7 +90,6 @@ class App extends Component {
               products={this.state.products}
               productsCount={this.state.productsCount}
               addProductToBasket={this.addProductToBasket}
-              setCurrentProduct={this.setCurrentProduct}
             />
           )}
         />
@@ -105,6 +99,7 @@ class App extends Component {
             <ProductAbout
               {...props}
               addProductToBasket={this.addProductToBasket}
+              productsCount={this.state.productsCount}
               products={this.state.products}
             />
           )}

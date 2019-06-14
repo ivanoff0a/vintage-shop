@@ -1,14 +1,96 @@
+@media screen and (max-width: 1024px) {
+  .about {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 350px;
+    margin-bottom: 100px;
+  }
+
+  .about__name,
+  .about__size,
+  .about__portrait,
+  .about__price {
+    padding-bottom: 10px;
+  }
+
+  .about__img {
+    img {
+      height: 350px;
+      width: 350px;
+    }
+  }
+
+  .about__quit {
+    height: 20px;
+    top: -65px;
+    left: 0;
+    img {
+      transform: rotate(270deg);
+    }
+  }
+
+  .about__container {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about__buy {
+    width: 350px;
+    padding-top: 20px;
+  }
+
+  .about__info {
+    padding-top: 20px;
+    width: 350px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .about {
+    flex-direction: row;
+  }
+
+  .about__name,
+  .about__size,
+  .about__portrait,
+  .about__price {
+    padding-bottom: 20px;
+  }
+
+  .about__img {
+    img {
+      height: 500px;
+    }
+  }
+
+  .about__quit {
+    height: 27px;
+    top: -5px;
+    left: -85px;
+  }
+
+  .about__container {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about__buy {
+    position: absolute;
+    bottom: 5px;
+  }
+
+  .about__info {
+    padding-left: 30px;
+    width: 500px;
+  }
+
+}
+
 .about {
   position: relative;
   display: flex;
-  flex-direction: row;
 
-  &__name,
-  &__size,
-  &__portrait,
-  &__price {
-    padding-bottom: 20px;
-  }
 
   p {
     font-family: "Courier New", sans-serif;
@@ -16,16 +98,9 @@
     font-size: 20px;
   }
 
-  &__buy {
-    position: absolute;
-    bottom: 5px;
-  }
 
   &__quit {
     position: absolute;
-    height: 27px;
-    top: -5px;
-    left: -85px;
     cursor: pointer;
     img {
       transform: rotate(270deg);
@@ -35,20 +110,11 @@
   &__info {
     display: flex;
     flex-direction: column;
-    padding-left: 30px;
-    width: 500px;
   }
 
   &__container {
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: calc(100vh - 71px);
     width: 100%;
-  }
-  &__img {
-    img {
-      height: 500px;
-    }
   }
 }
