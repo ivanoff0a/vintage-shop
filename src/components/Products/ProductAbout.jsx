@@ -5,35 +5,32 @@ import basket__icon_white from "../../assets/img/bucket-icon-white.png";
 import {Link} from "react-router-dom";
 
 class ProductAbout extends Component {
-  onAddClick = () => {
-    this.props.addProductToBasket(this.props.currentProduct);
-  }
-
   onQuitClick = () => {
     this.props.history.push(Routes.SHOP);
   }
 
   render() {
-    // this.props.match.params.short_name = this.props.currentProduct.short_name;
-    // const short_name = this.props.match.params.short_name;
-    // console.log(short_name);
+    const itemShortKey = this.props.match.params.short_name;
+    const currentProduct = this.props.products.filter(product => product.short_name === itemShortKey)[0];
+    console.log(currentProduct);
+
     if(this.props.productsCount === 0) {
       return (
         <div className="about__container">
           <div className="about">
             <div className="about__img">
-              <img alt="Предмет" src={this.props.currentProduct.pic} />
+              <img alt="Предмет" src={currentProduct.pic} />
             </div>
             <div className="about__info">
               <div className="about__desc">
-                <p className="about__name">{this.props.currentProduct.brand}</p>
-                <p className="about__name"> {this.props.currentProduct.name}</p>
-                <p className="about__size"> {this.props.currentProduct.size}</p>
-                <p className="about__portrait">{this.props.currentProduct.desc}</p>
+                <p className="about__name">{currentProduct.brand}</p>
+                <p className="about__name"> {currentProduct.name}</p>
+                <p className="about__size"> {currentProduct.size}</p>
+                <p className="about__portrait">{currentProduct.desc}</p>
               </div>
               <div className="about__buy">
-                <p className="about__price">{this.props.currentProduct.price} руб.</p>
-                <div className="basket__buy" onClick={this.onAddClick}>
+                <p className="about__price">{currentProduct.price} руб.</p>
+                <div className="basket__buy" onClick={() => this.props.addProductToBasket(currentProduct)}>
                   <p>Купить</p>
                 </div>
               </div>
@@ -49,22 +46,22 @@ class ProductAbout extends Component {
         <div className="about__container">
           <div className="about">
             <div className="about__img">
-              <img alt="Предмет" src={this.props.currentProduct.pic} />
+              <img alt="Предмет" src={currentProduct.pic} />
             </div>
             <div className="about__info">
               <div className="about__desc">
-                <p className="about__name">{this.props.currentProduct.brand}</p>
-                <p className="about__name"> {this.props.currentProduct.name}</p>
-                <p className="about__size"> {this.props.currentProduct.size}</p>
+                <p className="about__name">{currentProduct.brand}</p>
+                <p className="about__name"> {currentProduct.name}</p>
+                <p className="about__size"> {currentProduct.size}</p>
                 <p className="about__portrait">
-                  {this.props.currentProduct.desc}
+                  {currentProduct.desc}
                 </p>
               </div>
               <div className="about__buy">
                 <p className="about__price">
-                  {this.props.currentProduct.price} руб.
+                  {currentProduct.price} руб.
                 </p>
-                <div className="basket__buy" onClick={this.onAddClick}>
+                <div className="basket__buy" onClick={() => this.props.addProductToBasket(currentProduct)}>
                   <p>Купить</p>
                 </div>
               </div>

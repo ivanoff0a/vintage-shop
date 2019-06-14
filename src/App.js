@@ -105,8 +105,7 @@ class App extends Component {
             <ProductAbout
               {...props}
               addProductToBasket={this.addProductToBasket}
-              productsCount={this.state.productsCount}
-              currentProduct={this.state.currentProduct}
+              products={this.state.products}
             />
           )}
         />

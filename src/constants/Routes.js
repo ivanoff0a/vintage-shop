@@ -1,7 +1,7 @@
 const ROUTES = {
   SHOP: '/',
   BASKET: '/order',
-  PRODUCT: '/product/'
+  PRODUCT: '/product/:short_name'
 
 };
 
